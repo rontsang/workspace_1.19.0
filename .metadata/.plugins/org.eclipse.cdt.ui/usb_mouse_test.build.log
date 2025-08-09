@@ -1,4 +1,4 @@
-16:18:45 **** Build of configuration Debug for project usb_mouse_test ****
+17:53:46 **** Build of configuration Debug for project usb_mouse_test ****
 make -j24 all 
 arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
 arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
@@ -44,5 +44,5 @@ Finished building: default.size.stdout
 Finished building: usb_mouse_test.list
  
 
-16:18:46 Build Finished. 0 errors, 0 warnings. (took 1s.218ms)
+17:53:47 Build Finished. 0 errors, 0 warnings. (took 1s.111ms)
 

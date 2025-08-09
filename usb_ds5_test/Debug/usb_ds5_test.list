@@ -35,13 +35,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 00000d8b  00000000  00000000  0001bfb8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0001a716  00000000  00000000  0001cd43  2**0
+ 16 .debug_macro  0001a715  00000000  00000000  0001cd43  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00014fa9  00000000  00000000  00037459  2**0
+ 17 .debug_line   00014fa9  00000000  00000000  00037458  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0008de0a  00000000  00000000  0004c402  2**0
+ 18 .debug_str    0008de0a  00000000  00000000  0004c401  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000da20c  2**0
+ 19 .comment      00000043  00000000  00000000  000da20b  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00001b58  00000000  00000000  000da250  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -7404,9 +7404,9 @@ static uint8_t  *USBD_HID_GetDeviceQualifierDesc(uint16_t *length)
         	  len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
  80029b0:	88db      	ldrh	r3, [r3, #6]
  80029b2:	1c1a      	adds	r2, r3, #0
- 80029b4:	2b63      	cmp	r3, #99	@ 0x63
+ 80029b4:	2b61      	cmp	r3, #97	@ 0x61
  80029b6:	d900      	bls.n	80029ba <USBD_HID_Setup+0x9a>
- 80029b8:	2263      	movs	r2, #99	@ 0x63
+ 80029b8:	2261      	movs	r2, #97	@ 0x61
 			  pbuf = DS5_HID_ReportDesc;
  80029ba:	490e      	ldr	r1, [pc, #56]	@ (80029f4 <USBD_HID_Setup+0xd4>)
         	  len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);

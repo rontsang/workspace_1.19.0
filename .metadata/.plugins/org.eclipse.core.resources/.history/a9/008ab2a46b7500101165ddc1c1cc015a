@@ -78,6 +78,7 @@ __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
 	0x09, 0x20,
 	0x95, 0x01,       //   Report Count (1)
 	0x81, 0x02,       //   Input (Data,Var,Abs)
+	0x81, 0x02,
 
 	// Hat switch
 	0x05, 0x01,
@@ -87,7 +88,7 @@ __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
 	0x35, 0x00,
 	0x46, 0x3B, 0x01,
 	0x65, 0x14,
-	0x75, 0x08,
+	0x75, 0x04,
 	0x95, 0x01,
 	0x81, 0x42,
 	0x65, 0x00,
@@ -304,8 +305,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
   0x00,         /*bCountryCode: Hardware target country*/
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
-  DS5_HID_REPORT_DESC_SIZE,
-//  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
   0x00,
   /******************** Descriptor of Mouse endpoint ********************/
   /* 27 */
@@ -355,8 +355,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ]
   0x00,         /*bCountryCode: Hardware target country*/
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
-  DS5_HID_REPORT_DESC_SIZE,
-//  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
   0x00,
   /******************** Descriptor of Mouse endpoint ********************/
   /* 27 */
@@ -383,8 +382,7 @@ __ALIGN_BEGIN static uint8_t USBD_HID_Desc[USB_HID_DESC_SIZ]  __ALIGN_END  =
   0x00,         /*bCountryCode: Hardware target country*/
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
-  DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
-//  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
   0x00,
 };
 

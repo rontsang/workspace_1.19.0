@@ -4738,8 +4738,8 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x20000090       0x38 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
                 0x20000090                USBD_HID
  .data.DS5_HID_ReportDesc
-                0x200000c8       0x63 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
- *fill*         0x2000012b        0x1 
+                0x200000c8       0x61 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
+ *fill*         0x20000129        0x3 
  .data.USBD_StringSerial
                 0x2000012c       0x1a ./USB_DEVICE/App/usbd_desc.o
                 0x2000012c                USBD_StringSerial
@@ -5015,7 +5015,7 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_rnglists
                 0x00000cb2       0xd9 ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_macro    0x00000000    0x1a716
+.debug_macro    0x00000000    0x1a715
  .debug_macro   0x00000000      0x380 ./Core/Src/main.o
  .debug_macro   0x00000380      0xab4 ./Core/Src/main.o
  .debug_macro   0x00000e34      0x133 ./Core/Src/main.o
@@ -5097,20 +5097,20 @@ LOAD C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_macro   0x000184c9      0x1e4 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o
  .debug_macro   0x000186ad      0x1ef ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o
  .debug_macro   0x0001889c      0x1d2 ./Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.o
- .debug_macro   0x00018a6e      0x3b3 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
- .debug_macro   0x00018e21       0x9e ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
- .debug_macro   0x00018ebf      0x112 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
- .debug_macro   0x00018fd1       0x4f ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
- .debug_macro   0x00019020      0x357 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_macro   0x00019377      0x1ce ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_macro   0x00019545      0x361 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .debug_macro   0x000198a6      0x35d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
- .debug_macro   0x00019c03      0x387 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x00019f8a       0x46 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x00019fd0       0x22 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x00019ff2      0x394 ./USB_DEVICE/App/usbd_desc.o
- .debug_macro   0x0001a386       0x1c ./USB_DEVICE/App/usbd_desc.o
- .debug_macro   0x0001a3a2      0x374 ./USB_DEVICE/Target/usbd_conf.o
+ .debug_macro   0x00018a6e      0x3b2 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
+ .debug_macro   0x00018e20       0x9e ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
+ .debug_macro   0x00018ebe      0x112 ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
+ .debug_macro   0x00018fd0       0x4f ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o
+ .debug_macro   0x0001901f      0x357 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_macro   0x00019376      0x1ce ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_macro   0x00019544      0x361 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_macro   0x000198a5      0x35d ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_macro   0x00019c02      0x387 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x00019f89       0x46 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x00019fcf       0x22 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x00019ff1      0x394 ./USB_DEVICE/App/usbd_desc.o
+ .debug_macro   0x0001a385       0x1c ./USB_DEVICE/App/usbd_desc.o
+ .debug_macro   0x0001a3a1      0x374 ./USB_DEVICE/Target/usbd_conf.o
 
 .debug_line     0x00000000    0x14fa9
  .debug_line    0x00000000      0xd14 ./Core/Src/main.o
