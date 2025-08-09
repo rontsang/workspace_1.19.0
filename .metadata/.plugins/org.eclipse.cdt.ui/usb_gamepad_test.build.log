@@ -1,0 +1,10 @@
+16:24:00 **** Incremental Build of configuration Debug for project usb_gamepad_test ****
+make -j24 all 
+arm-none-eabi-size  usb_gamepad_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32304	    312	   3688	  36304	   8dd0	usb_gamepad_test.elf
+Finished building: default.size.stdout
+ 
+
+16:24:00 Build Finished. 0 errors, 0 warnings. (took 192ms)
+

@@ -1,0 +1,26 @@
+/*
+ * eeprom_emulation.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: rntsang
+ */
+
+#ifndef INC_EEPROM_EMULATION_H_
+#define INC_EEPROM_EMULATION_H_
+
+#include <stdint.h>
+
+typedef enum {
+  MODE_KEYBOARD = 0,
+  MODE_GAMEPAD = 1,
+  MODE_DS5 = 2
+} DeviceMode_t;
+
+#define FLASH_END_ADDRESS       0x08007FFFU
+#define FLASH_STORAGE_ADDRESS   (FLASH_END_ADDRESS - FLASH_PAGE_SIZE + 1U)
+
+uint8_t Flash_Append(uint16_t data);
+uint16_t Flash_ReadLastValue(void);
+void cycle_state_and_reset(DeviceMode_t currentState);
+
+#endif

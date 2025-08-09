@@ -1,0 +1,11 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:blink_3 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:eeprom_emulation,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_gamepad_test (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_test (1),org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_test,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_hid_switch Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_mouse_test,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_gamepad_test,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_ds5_test Debug
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:blink_3\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:blink_3\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_ds5_test\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_gamepad_test/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_hid_switch\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:usb_test/activeLaunchMode=debug

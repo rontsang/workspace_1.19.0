@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="devicedesc"/>
+		<item value="ds5"/>
+		<item value="last"/>
+		<item value="_write"/>
+		<item value="USBD_HID_Init"/>
+		<item value="DS5_HID_ReportDesc"/>
+		<item value="USBD_LL_Transmit"/>
+		<item value="length"/>
+		<item value="wDescriptorLength"/>
+		<item value="wDescriptorLength "/>
+		<item value="bmAttributes"/>
+		<item value="wMaxPacketSize"/>
+		<item value="USBD_HID_CfgDesc "/>
+		<item value="hid_epin"/>
+		<item value="USBD_HID_Desc"/>
+	</list>
+</section>

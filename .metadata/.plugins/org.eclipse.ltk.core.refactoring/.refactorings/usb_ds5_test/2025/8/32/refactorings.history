@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;usb_ds5_test/usb_mouse_test.ioc&apos; to &apos;usb_ds5_test.ioc&apos;" description="Rename resource &apos;usb_mouse_test.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="usb_mouse_test.ioc" name="usb_ds5_test.ioc" stamp="1754337980415" updateReferences="true"/>
+</session>

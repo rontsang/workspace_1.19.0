@@ -1,0 +1,13 @@
+/*
+ * eeprom_emulation.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: rntsa
+ */
+
+#ifndef INC_EEPROM_EMULATION_H_
+#define INC_EEPROM_EMULATION_H_
+
+
+
+#endif /* INC_EEPROM_EMULATION_H_ */

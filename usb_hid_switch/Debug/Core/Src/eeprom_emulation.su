@@ -1,0 +1,3 @@
+../Core/Src/eeprom_emulation.c:18:9:Flash_Append	32	static
+../Core/Src/eeprom_emulation.c:48:10:Flash_ReadLastValue	16	static
+../Core/Src/eeprom_emulation.c:83:6:cycle_state_and_reset	16	static

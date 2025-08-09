@@ -1,0 +1,10 @@
+16:04:43 **** Incremental Build of configuration Debug for project blink_3 ****
+make -j24 all 
+arm-none-eabi-size  blink_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13716	    104	   2080	  15900	   3e1c	blink_3.elf
+Finished building: default.size.stdout
+ 
+
+16:04:43 Build Finished. 0 errors, 0 warnings. (took 402ms)
+

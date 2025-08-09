@@ -1,0 +1,10 @@
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:671:18:USBD_HID_GetFSCfgDesc	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:684:18:USBD_HID_GetHSCfgDesc	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:697:18:USBD_HID_GetOtherSpeedCfgDesc	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:710:17:USBD_HID_DataIn	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:727:18:USBD_HID_GetDeviceQualifierDesc	1
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:494:17:USBD_HID_Setup	20
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:470:17:USBD_HID_DeInit	2
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:443:17:USBD_HID_Init	2
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:616:9:USBD_HID_SendReport	3
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:642:10:USBD_HID_GetPollingInterval	2
