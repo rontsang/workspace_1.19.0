@@ -46,6 +46,7 @@ EndBSPDependencies */
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_hid.h"
 #include "usbd_ctlreq.h"
+#include <stdio.h>
 
 #define GAMEPAD_HID_REPORT_DESC_SIZE 29
 #define GAMEPAD_HID_EPIN_ADDR        0x81
@@ -125,6 +126,8 @@ __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
 #define DS5_HID_HS_BINTERVAL        0x07
 
 #define DS5_REPORT_ID               0x01
+
+volatile uint16_t debug_descriptor_size = DS5_HID_REPORT_DESC_SIZE;
 
 
 /** @addtogroup STM32_USB_DEVICE_LIBRARY
@@ -445,6 +448,10 @@ __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
 static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   /* Open EP IN */
+	  printf("Got here\r\n");
+	  printf("Size of DS5_HID_ReportDesc is: %u bytes\r\n", sizeof(DS5_HID_ReportDesc));
+
+
 	  USBD_LL_OpenEP(pdev, DS5_HID_EPIN_ADDR, USBD_EP_TYPE_INTR, DS5_HID_EPIN_SIZE);
 	  pdev->ep_in[DS5_HID_EPIN_ADDR & 0xFU].is_used = 1U;
 //	  USBD_LL_OpenEP(pdev, HID_EPIN_ADDR, USBD_EP_TYPE_INTR, HID_EPIN_SIZE);

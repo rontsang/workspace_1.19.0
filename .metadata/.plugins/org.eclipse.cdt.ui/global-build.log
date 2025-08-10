@@ -556,3 +556,1443 @@ arm-none-eabi-size  usb_ds5_test.elf
   13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
 Finished building: default.size.stdout
  
+20:04:11 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:389:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  389 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:124:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+  124 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19448	    472	   4128	  24048	   5df0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:04:23 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19448	    472	   4128	  24048	   5df0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:06:16 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+20:09:20 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Init':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:430:34: error: expected ';' before 'if'
+  430 |         g_current_mode = MODE_DS5
+      |                                  ^
+      |                                  ;
+  431 |         if (g_current_mode == MODE_DS5) {
+      |         ~~                        
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:389:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  389 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:124:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+  124 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:09:31 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:389:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  389 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:124:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+  124 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19428	    472	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:09:39 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19428	    472	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:11:42 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18676	    472	   4088	  23236	   5ac4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:11:53 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18676	    472	   4088	  23236	   5ac4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:16:25 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18676	    472	   4088	  23236	   5ac4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:16:46 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18688	    472	   4088	  23248	   5ad0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:16:52 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18688	    472	   4088	  23248	   5ad0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:17:25 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18688	    472	   4088	  23248	   5ad0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:17:38 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18688	    472	   4088	  23248	   5ad0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:18:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19436	    472	   4128	  24036	   5de4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:18:59 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19436	    472	   4128	  24036	   5de4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:19:13 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19436	    472	   4128	  24036	   5de4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:20:23 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_desc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_desc.d" -MT"USB_DEVICE/App/usbd_desc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_desc.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19432	    472	   4128	  24032	   5de0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:20:29 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19432	    472	   4128	  24032	   5de0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:23:05 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19432	    472	   4128	  24032	   5de0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:27:30 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/eeprom_emulation.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/eeprom_emulation.d" -MT"Core/Src/eeprom_emulation.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/eeprom_emulation.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f0xx.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f0xx.d" -MT"Core/Src/system_stm32f0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f0xx.o"
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:49:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:63:21: error: conflicting types for 'g_current_mode'; have 'DeviceMode_t'
+   63 | extern DeviceMode_t g_current_mode;
+      |                     ^~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:25:21: note: previous declaration of 'g_current_mode' with type 'int'
+   25 | extern DeviceMode_t g_current_mode;
+      |                     ^~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:234:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  234 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:289:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  289 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:341:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  341 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:369:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  369 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:390:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  390 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:538:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  538 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:147:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  147 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:538:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  538 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:539:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  539 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:390:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  390 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:28:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   28 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:71:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+   71 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: warning: 'DS5_HID_ReportDesc' defined but not used [-Wunused-variable]
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:27:49 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:28:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   28 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:49:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Core/Src/hid_profiles.c:71:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+   71 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: warning: 'DS5_HID_ReportDesc' defined but not used [-Wunused-variable]
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:58:8: error: unknown type name 'DeviceMode_t'
+   58 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Init':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:426:26: error: 'MODE_DS5' undeclared (first use in this function)
+  426 |         g_current_mode = MODE_DS5;
+      |                          ^~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:426:26: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:431:38: error: 'MODE_GAMEPAD' undeclared (first use in this function)
+  431 |         } else if (g_current_mode == MODE_GAMEPAD) {
+      |                                      ^~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:28:06 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:28:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   28 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:71:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+   71 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:230:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  230 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: warning: 'DS5_HID_ReportDesc' defined but not used [-Wunused-variable]
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:285:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  285 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:337:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  337 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:365:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  365 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:386:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  386 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  534 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:143:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  143 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  534 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:535:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  535 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:386:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  386 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:28:15 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:25:8: error: unknown type name 'DeviceMode_t'
+   25 | extern DeviceMode_t g_current_mode;
+      |        ^~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:28:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   28 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:71:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+   71 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: warning: 'DS5_HID_ReportDesc' defined but not used [-Wunused-variable]
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+make: *** Waiting for unfinished jobs....
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:29:25 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:30:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   30 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/hid_profiles.c:10:30: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:71:30: warning: 'GAMEPAD_HID_ReportDesc2' defined but not used [-Wunused-variable]
+   71 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:10:30: warning: 'DS5_HID_ReportDesc' defined but not used [-Wunused-variable]
+   10 | __ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:37:50 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:30:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   30 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/hid_profiles.c:10:23: error: conflicting types for 'DS5_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+   10 | __ALIGN_BEGIN uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
+      |                       ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:29:22: note: previous declaration of 'DS5_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   29 | extern const uint8_t DS5_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:38:17 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:30:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   30 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:38:30 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: error: conflicting types for 'GAMEPAD_HID_ReportDesc'; have 'uint8_t[]' {aka 'unsigned char[]'}
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:30:22: note: previous declaration of 'GAMEPAD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   30 | extern const uint8_t GAMEPAD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:142:41: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+  142 | #define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
+      |                                         ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:385:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  385 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:39:02 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: initializer element is not constant
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: (near initialization for 'USBD_HID_CfgFSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: error: initializer element is not constant
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: (near initialization for 'USBD_HID_CfgHSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: error: initializer element is not constant
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: (near initialization for 'USBD_HID_OtherSpeedCfgDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: error: initializer element is not constant
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: (near initialization for 'USBD_HID_Desc[7]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:44:02 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: initializer element is not constant
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: (near initialization for 'USBD_HID_CfgFSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: error: initializer element is not constant
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: (near initialization for 'USBD_HID_CfgHSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: error: initializer element is not constant
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: (near initialization for 'USBD_HID_OtherSpeedCfgDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: error: initializer element is not constant
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: (near initialization for 'USBD_HID_Desc[7]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:46:07 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: initializer element is not constant
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: (near initialization for 'USBD_HID_CfgFSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: error: initializer element is not constant
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: (near initialization for 'USBD_HID_CfgHSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: error: initializer element is not constant
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: (near initialization for 'USBD_HID_OtherSpeedCfgDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: error: initializer element is not constant
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: (near initialization for 'USBD_HID_Desc[7]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/hid_profiles.c:9:51: error: variably modified 'static_assertion_failed' at file scope
+    9 | #define C99_STATIC_ASSERT(condition) typedef char static_assertion_failed[(condition) ? 1 : -1]
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:99:1: note: in expansion of macro 'C99_STATIC_ASSERT'
+   99 | C99_STATIC_ASSERT(sizeof(DS5_HID_ReportDesc) == DS5_HID_REPORT_DESC_SIZE);
+      | ^~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:9:51: error: variably modified 'static_assertion_failed' at file scope
+    9 | #define C99_STATIC_ASSERT(condition) typedef char static_assertion_failed[(condition) ? 1 : -1]
+      |                                                   ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:100:1: note: in expansion of macro 'C99_STATIC_ASSERT'
+  100 | C99_STATIC_ASSERT(sizeof(GAMEPAD_HID_ReportDesc2) == Gamepad2_REPORT_DESC_SIZE);
+      | ^~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:48:15 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: initializer element is not constant
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: (near initialization for 'USBD_HID_CfgFSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: error: initializer element is not constant
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: (near initialization for 'USBD_HID_CfgHSDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: error: initializer element is not constant
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: (near initialization for 'USBD_HID_OtherSpeedCfgDesc[25]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: error: initializer element is not constant
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: (near initialization for 'USBD_HID_Desc[7]')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+20:48:56 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+20:48:59 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+20:50:09 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+20:50:29 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+20:50:52 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+20:53:38 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:409:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  409 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_ds5_test.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_ds5_test\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_ds5_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_ds5_test.elf
+ 
+arm-none-eabi-size  usb_ds5_test.elf 
+arm-none-eabi-objdump -h -S usb_ds5_test.elf  > "usb_ds5_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_ds5_test.list
+ 
+20:53:41 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+20:55:11 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:409:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  409 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_ds5_test.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_ds5_test\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_ds5_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_ds5_test.elf
+ 
+arm-none-eabi-size  usb_ds5_test.elf 
+arm-none-eabi-objdump -h -S usb_ds5_test.elf  > "usb_ds5_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_ds5_test.list
+ 
+20:55:39 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13964	    380	   3748	  18092	   46ac	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+21:00:07 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:410:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  410 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_ds5_test.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_ds5_test\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_ds5_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_ds5_test.elf
+ 
+arm-none-eabi-size  usb_ds5_test.elf 
+arm-none-eabi-objdump -h -S usb_ds5_test.elf  > "usb_ds5_test.list"
+   text	   data	    bss	    dec	    hex	filename
+  18112	    472	   4080	  22664	   5888	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_ds5_test.list
+ 
+21:00:27 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18112	    472	   4080	  22664	   5888	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+21:00:44 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18112	    472	   4080	  22664	   5888	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+21:01:18 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+make -j24 all 
+arm-none-eabi-size  usb_ds5_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18112	    472	   4080	  22664	   5888	usb_ds5_test.elf
+Finished building: default.size.stdout
+ 
+21:03:28 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+21:03:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:50:
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:284:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  284 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:336:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  336 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:364:3: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  364 |   DS5_HID_REPORT_DESC_SIZE,
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:29,
+                 from ../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:47:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:23: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                       ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Inc/hid_profiles.h:16:44: error: invalid application of 'sizeof' to incomplete type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   16 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      |                                            ^
+../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:277:36: note: in definition of macro 'MIN'
+  277 | #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
+      |                                    ^
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:533:29: note: in expansion of macro 'DS5_HID_REPORT_DESC_SIZE'
+  533 |                   len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:04:30 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: 'DS5_HID_REPORT_DESC_SIZE' undeclared here (not in a function); did you mean 'Gamepad2_REPORT_DESC_SIZE'?
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+      |   Gamepad2_REPORT_DESC_SIZE
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+../Core/Src/hid_profiles.c:95: warning: "DS5_HID_REPORT_DESC_SIZE" redefined
+   95 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(GAMEPAD_HID_ReportDesc2))
+      | 
+../Core/Src/hid_profiles.c:94: note: this is the location of the previous definition
+   94 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      | 
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:04:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: 'DS5_HID_REPORT_DESC_SIZE' undeclared here (not in a function); did you mean 'HID_MOUSE_REPORT_DESC_SIZE'?
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+      |   HID_MOUSE_REPORT_DESC_SIZE
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Core/Src/hid_profiles.c:95: warning: "DS5_HID_REPORT_DESC_SIZE" redefined
+   95 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(GAMEPAD_HID_ReportDesc2))
+      | 
+../Core/Src/hid_profiles.c:94: note: this is the location of the previous definition
+   94 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      | 
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:04:54 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: 'DS5_HID_REPORT_DESC_SIZE' undeclared here (not in a function); did you mean 'HID_MOUSE_REPORT_DESC_SIZE'?
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+      |   HID_MOUSE_REPORT_DESC_SIZE
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:06:37 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:229:3: error: 'DS5_HID_REPORT_DESC_SIZE' undeclared here (not in a function); did you mean 'HID_MOUSE_REPORT_DESC_SIZE'?
+  229 |   DS5_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~
+      |   HID_MOUSE_REPORT_DESC_SIZE
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+21:12:39 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+../Core/Src/hid_profiles.c:94: warning: "DS5_HID_REPORT_DESC_SIZE" redefined
+   94 | #define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
+      | 
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:16: note: this is the location of the previous definition
+   16 | #define DS5_HID_REPORT_DESC_SIZE    97
+      | 
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+21:12:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+21:12:50 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+21:13:25 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_Setup':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:534:32: warning: assignment discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  534 |                           pbuf = DS5_HID_ReportDesc;
+      |                                ^
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+21:13:42 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19528	    372	   4128	  24028	   5ddc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 

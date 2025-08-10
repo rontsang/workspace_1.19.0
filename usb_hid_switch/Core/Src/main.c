@@ -96,6 +96,7 @@ int main(void)
 	/* USER CODE BEGIN ... */
 	// 2. HID mode initialization
 	g_current_mode = (DeviceMode_t)Flash_ReadLastValue();
+//	g_current_mode = MODE_DS5;
 	MX_USB_DEVICE_Init();
 
 	static GAMEPAD_Report_t report;
@@ -115,8 +116,6 @@ int main(void)
 
 	// 3. Main loop
 
-
-
 	while (1)
 	{
 
@@ -126,12 +125,12 @@ int main(void)
 	     // 0x7FFF is a bitmask with the first 15 bits set to 1.
 	     report.buttons = 0x7FFF;
 	     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
-	     HAL_Delay(200); // Wait 0.2 seconds
+	     HAL_Delay(50); // Wait 0.2 seconds
 
 	     /* --- Release all buttons --- */
 	     report.buttons = 0x0000;
 	     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
-	     HAL_Delay(200); // Wait 0.2 seconds
+	     HAL_Delay(50); // Wait 0.2 seconds
 
 
 //		uint16_t last = Flash_ReadLastValue();
@@ -152,7 +151,7 @@ int main(void)
 	//		 printf("Value written.\r\n");
 	//	 }
 
-		HAL_Delay(1000);
+		HAL_Delay(50);
 	}
 
   /* USER CODE END ... */

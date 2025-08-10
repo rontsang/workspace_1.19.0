@@ -9,9 +9,9 @@
 #define INC_HID_MODES_H_
 
 typedef enum {
-  MODE_KEYBOARD = 0,
-  MODE_GAMEPAD = 1,
-  MODE_DS5 = 2
+  MODE_DS5 		= 0,
+  MODE_GAMEPAD 	= 1,
+  MODE_KEYBOARD = 2
 } DeviceMode_t;
 
 // Use 'extern' to declare that g_current_mode exists somewhere else
