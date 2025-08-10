@@ -7,6 +7,8 @@
 
 #include "hid_profiles.h"
 
+//extern uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ];
+
 __ALIGN_BEGIN const uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
     0x05, 0x01,       // Usage Page (Generic Desktop)
     0x09, 0x05,       // Usage (Gamepad)
@@ -68,7 +70,7 @@ __ALIGN_BEGIN const uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
 };
 
 
-__ALIGN_BEGIN const uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
+__ALIGN_BEGIN const uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
 	0x05, 0x01,        // Usage Page (Generic Desktop)
 	0x09, 0x05,        // Usage (Game Pad)
 	0xA1, 0x01,        // Collection (Application)
@@ -90,10 +92,32 @@ __ALIGN_BEGIN const uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
 	0xC0               // End Collection
 };
 
+void USBD_HID_UpdateDescriptors(DeviceMode_t mode)
+{
+//  uint8_t *pCfg = USBD_HID_CfgFSDesc;
+//
+//  switch (mode)
+//  {
+//    case MODE_DS5:
+//      pCfg[25] = (uint8_t)(DS5_HID_REPORT_DESC_SIZE);      // Report Descriptor size
+//      pCfg[29] = DS5_HID_EPIN_ADDR;                        // Endpoint Address
+//      pCfg[31] = (uint8_t)(DS5_HID_EPIN_SIZE);             // Endpoint Size
+//      pCfg[33] = DS5_HID_FS_BINTERVAL;                     // Polling Interval
+//      break;
+//
+//    case MODE_GAMEPAD:
+//      pCfg[25] = (uint8_t)(GAMEPAD_HID_REPORT_DESC_SIZE); // Report Descriptor size
+//      pCfg[29] = GAMEPAD_HID_EPIN_ADDR;                   // Endpoint Address
+//      pCfg[31] = (uint8_t)(GAMEPAD_HID_EPIN_SIZE);        // Endpoint Size
+//      pCfg[33] = GAMEPAD_HID_FS_BINTERVAL;                // Polling Interval
+//      break;
+//
+//    default:
+//      // Default to one mode for safety
+//      break;
+//  }
+  // IMPORTANT: You must also patch USBD_HID_CfgHSDesc and
+  // USBD_HID_OtherSpeedCfgDesc here in the same way to ensure they are consistent.
+}
 
-//#define DS5_HID_REPORT_DESC_SIZE    (sizeof(DS5_HID_ReportDesc))
-//#define GAMEPAD_HID_REPORT_DESC_SIZE    (sizeof(GAMEPAD_HID_ReportDesc2))
-
-//const uint16_t DS5_HID_REPORT_DESC_SIZE = sizeof(DS5_HID_ReportDesc);
-//const uint16_t Gamepad2_REPORT_DESC_SIZE = sizeof(GAMEPAD_HID_ReportDesc2);
 

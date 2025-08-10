@@ -14,7 +14,6 @@ typedef enum {
   MODE_KEYBOARD = 2
 } DeviceMode_t;
 
-// Use 'extern' to declare that g_current_mode exists somewhere else
 extern DeviceMode_t g_current_mode;
 
 #endif /* INC_HID_MODES_H_ */

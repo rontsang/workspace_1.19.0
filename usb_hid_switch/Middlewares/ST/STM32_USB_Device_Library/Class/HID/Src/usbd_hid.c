@@ -49,107 +49,7 @@ EndBSPDependencies */
 #include "hid_modes.h"
 #include "hid_profiles.h"
 
-//#define GAMEPAD_HID_REPORT_DESC_SIZE 29
-//#define GAMEPAD_HID_EPIN_ADDR        0x81
-//#define GAMEPAD_HID_EPIN_SIZE        2  // 1 byte buttons + 6 bits padding
-//#define GAMEPAD_HID_FS_BINTERVAL     0x0A
-//#define GAMEPAD_HID_HS_BINTERVAL     0x07
-
 extern DeviceMode_t g_current_mode;
-//
-//__ALIGN_BEGIN static uint8_t DS5_HID_ReportDesc[] __ALIGN_END = {
-//    0x05, 0x01,       // Usage Page (Generic Desktop)
-//    0x09, 0x05,       // Usage (Gamepad)
-//    0xA1, 0x01,       // Collection (Application)
-//    0x85, 0x01,       //   Report ID (1)
-//
-//    // Axes (6 x 8-bit)
-//    0x09, 0x30, 0x09, 0x31, 0x09, 0x32,
-//    0x09, 0x35, 0x09, 0x33, 0x09, 0x34,
-//    0x15, 0x00,
-//    0x26, 0xFF, 0x00,
-//    0x75, 0x08,
-//    0x95, 0x06,
-//    0x81, 0x02,
-//
-//    // Vendor-defined byte
-//    0x06, 0x00, 0xFF,
-//    0x09, 0x20,
-//    0x75, 0x08,
-//    0x95, 0x01,
-//    0x81, 0x02,
-//
-//    // Hat switch
-//    0x05, 0x01,
-//    0x09, 0x39,
-//    0x15, 0x00,
-//    0x25, 0x07,
-//    0x35, 0x00,
-//    0x46, 0x3B, 0x01,
-//    0x65, 0x14,
-//    0x75, 0x08,
-//    0x95, 0x01,
-//    0x81, 0x42,
-//    0x65, 0x00,
-//
-//    // Buttons 1–15
-//    0x05, 0x09,
-//    0x19, 0x01,
-//    0x29, 0x0F,
-//    0x15, 0x00,
-//    0x25, 0x01,
-//    0x75, 0x01,
-//    0x95, 0x0F,
-//    0x81, 0x02,
-//
-////     Padding
-//    0x75, 0x01,
-//    0x95, 0x01,
-//    0x81, 0x03,
-//
-//    // Vendor-defined 53 bytes
-//    0x06, 0x00, 0xFF,
-//    0x09, 0x21,
-//    0x75, 0x08,
-//    0x95, 0x35,
-//    0x81, 0x02,
-//
-//    0xC0
-//};
-//
-//__ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc2[] __ALIGN_END = {
-//	0x05, 0x01,        // Usage Page (Generic Desktop)
-//	0x09, 0x05,        // Usage (Game Pad)
-//	0xA1, 0x01,        // Collection (Application)
-//
-//	0x05, 0x09,        //   Usage Page (Button)
-//	0x19, 0x01,        //   Usage Minimum (Button 1)
-//	0x29, 0x0A,        //   Usage Maximum (Button 10)
-//	0x15, 0x00,        //   Logical Minimum (0)
-//	0x25, 0x01,        //   Logical Maximum (1)
-//	0x95, 0x0A,        //   Report Count (10 buttons)
-//	0x75, 0x01,        //   Report Size (1 bit per button)
-//	0x81, 0x02,        //   Input (Data, Variable, Absolute)
-//
-//	// Padding to align to full byte (6 bits)
-//	0x95, 0x01,        //   Report Count (1)
-//	0x75, 0x06,        //   Report Size (6 bits)
-//	0x81, 0x03,        //   Input (Constant, Variable, Absolute) — padding
-//
-//	0xC0               // End Collection
-//};
-
-//#define DS5_HID_REPORT_DESC_SIZE (sizeof(DS5_HID_ReportDesc)) // Descriptor size
-//#define DS5_HID_EPIN_ADDR           0x81    // IN endpoint
-//#define DS5_HID_EPIN_SIZE           64      // 64-byte report
-//#define DS5_HID_FS_BINTERVAL        0x0A
-//#define DS5_HID_HS_BINTERVAL        0x07
-//
-//#define DS5_REPORT_ID               0x01
-
-//#define Gamepad_HID_REPORT_DESC_SIZE (sizeof(GAMEPAD_HID_ReportDesc)) // Descriptor size
-//#define Gamepad2_REPORT_DESC_SIZE (sizeof(GAMEPAD_HID_ReportDesc2)) // Descriptor size
-
 
 static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev,
                               uint8_t cfgidx);
@@ -190,7 +90,7 @@ USBD_ClassTypeDef  USBD_HID =
 };
 
 /* USB HID device FS Configuration Descriptor */
-__ALIGN_BEGIN static uint8_t USBD_HID_CfgFSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+__ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
   0x09, /* bLength: Configuration Descriptor size */
   USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
@@ -381,30 +281,6 @@ __ALIGN_BEGIN static uint8_t USBD_HID_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_
   0x00,
 };
 
-
-//__ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
-//	0x05, 0x01,        // Usage Page (Generic Desktop)
-//	0x09, 0x05,        // Usage (Game Pad)
-//	0xA1, 0x01,        // Collection (Application)
-//
-//	0x05, 0x09,        //   Usage Page (Button)
-//	0x19, 0x01,        //   Usage Minimum (Button 1)
-//	0x29, 0x0A,        //   Usage Maximum (Button 10)
-//	0x15, 0x00,        //   Logical Minimum (0)
-//	0x25, 0x01,        //   Logical Maximum (1)
-//	0x95, 0x0A,        //   Report Count (10 buttons)
-//	0x75, 0x01,        //   Report Size (1 bit per button)
-//	0x81, 0x02,        //   Input (Data, Variable, Absolute)
-//
-//	// Padding to align to full byte (6 bits)
-//	0x95, 0x01,        //   Report Count (1)
-//	0x75, 0x06,        //   Report Size (6 bits)
-//	0x81, 0x03,        //   Input (Constant, Variable, Absolute) — padding
-//
-//	0xC0               // End Collection
-//};
-
-
 /**
   * @}
   */
@@ -530,12 +406,16 @@ static uint8_t  USBD_HID_Setup(USBD_HandleTypeDef *pdev,
         case USB_REQ_GET_DESCRIPTOR:
           if (req->wValue >> 8 == HID_REPORT_DESC)
           {
-        	  len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
-			  pbuf = DS5_HID_ReportDesc;
-//        	  len = MIN(GAMEPAD_HID_REPORT_DESC_SIZE, req->wLength);
-//        	  pbuf = GAMEPAD_HID_ReportDesc;
-//            len = MIN(HID_MOUSE_REPORT_DESC_SIZE, req->wLength);
-//            pbuf = HID_MOUSE_ReportDesc;
+        	  if (g_current_mode == MODE_DS5)
+			   {
+				 pbuf = (uint8_t*)DS5_HID_ReportDesc;
+				 len = MIN(DS5_HID_REPORT_DESC_SIZE, req->wLength);
+			   }
+			   else // (g_current_mode == MODE_GAMEPAD)
+			   {
+				 pbuf = (uint8_t*)GAMEPAD_HID_ReportDesc;
+				 len = MIN(GAMEPAD_HID_REPORT_DESC_SIZE, req->wLength);
+			   }
           }
           else if (req->wValue >> 8 == HID_DESCRIPTOR_TYPE)
           {
@@ -655,8 +535,34 @@ uint32_t USBD_HID_GetPollingInterval(USBD_HandleTypeDef *pdev)
   */
 static uint8_t  *USBD_HID_GetFSCfgDesc(uint16_t *length)
 {
-  *length = sizeof(USBD_HID_CfgFSDesc);
-  return USBD_HID_CfgFSDesc;
+	uint8_t *desc_ptr;
+
+	switch (g_current_mode)
+	  {
+	    case MODE_DS5:
+	      desc_ptr = USBD_HID_CfgFSDesc_DS5;
+	      *length = sizeof(USBD_HID_CfgFSDesc_DS5);
+	      break;
+
+	    case MODE_GAMEPAD:
+	      desc_ptr = USBD_HID_CfgFSDesc_DS5;
+	      *length = sizeof(USBD_HID_CfgFSDesc_DS5);
+	      break;
+
+	    // Add a case for your third mode if needed
+	    // case MODE_XINPUT:
+	    //   desc_ptr = USBD_HID_CfgFSDesc_XINPUT;
+	    //   *length = sizeof(USBD_HID_CfgFSDesc_XINPUT);
+	    //   break;
+
+	    default:
+	      // In case of an invalid mode, default to a known configuration.
+	      desc_ptr = USBD_HID_CfgFSDesc_DS5;
+	      *length = sizeof(USBD_HID_CfgFSDesc_DS5);
+	      break;
+	  }
+
+  return desc_ptr;
 }
 
 /**

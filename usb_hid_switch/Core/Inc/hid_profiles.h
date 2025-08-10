@@ -20,10 +20,10 @@
 #define DS5_REPORT_ID               0x01
 
 // Generic Gamepad Profile
-//#define Gamepad2_REPORT_DESC_SIZE   29
-#define GAMEPAD_HID_EPIN_ADDR       0x81
-#define GAMEPAD_HID_EPIN_SIZE       2
-#define GAMEPAD_HID_FS_BINTERVAL    0x0A
+#define GAMEPAD_HID_REPORT_DESC_SIZE  	29
+#define GAMEPAD_HID_EPIN_ADDR       	0x81
+#define GAMEPAD_HID_EPIN_SIZE      	 	2
+#define GAMEPAD_HID_FS_BINTERVAL    	0x0A
 
 // The global variable for the current mode
 extern DeviceMode_t g_current_mode;
@@ -32,5 +32,8 @@ extern DeviceMode_t g_current_mode;
 extern const uint8_t DS5_HID_ReportDesc[];
 extern const uint8_t GAMEPAD_HID_ReportDesc[];
 extern const uint8_t KEYBOARD_HID_ReportDesc[];
+
+// Dynamically change descriptors during runtime
+void USBD_HID_UpdateDescriptors(DeviceMode_t mode);
 
 #endif /* INC_HID_PROFILES_H_ */

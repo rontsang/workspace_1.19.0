@@ -1,10 +1,20 @@
-21:01:18 **** Incremental Build of configuration Debug for project usb_ds5_test ****
+21:47:00 **** Incremental Build of configuration Debug for project usb_ds5_test ****
 make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:410:30: warning: 'GAMEPAD_HID_ReportDesc' defined but not used [-Wunused-variable]
+  410 | __ALIGN_BEGIN static uint8_t GAMEPAD_HID_ReportDesc[] __ALIGN_END = {
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_ds5_test.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_ds5_test\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_ds5_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_ds5_test.elf
+ 
 arm-none-eabi-size  usb_ds5_test.elf 
+arm-none-eabi-objdump -h -S usb_ds5_test.elf  > "usb_ds5_test.list"
    text	   data	    bss	    dec	    hex	filename
   18112	    472	   4080	  22664	   5888	usb_ds5_test.elf
 Finished building: default.size.stdout
  
+Finished building: usb_ds5_test.list
+ 
 
-21:01:18 Build Finished. 0 errors, 0 warnings. (took 188ms)
+21:47:00 Build Finished. 0 errors, 1 warnings. (took 528ms)
 

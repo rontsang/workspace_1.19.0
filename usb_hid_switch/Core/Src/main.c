@@ -97,6 +97,10 @@ int main(void)
 	// 2. HID mode initialization
 	g_current_mode = (DeviceMode_t)Flash_ReadLastValue();
 //	g_current_mode = MODE_DS5;
+
+	// The HID arrays are statically allocated
+	// Overwrite certain parameters manually based on HID profile
+	USBD_HID_UpdateDescriptors();
 	MX_USB_DEVICE_Init();
 
 	static GAMEPAD_Report_t report;
