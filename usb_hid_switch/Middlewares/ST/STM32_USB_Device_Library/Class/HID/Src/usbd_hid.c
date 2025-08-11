@@ -90,6 +90,57 @@ USBD_ClassTypeDef  USBD_HID =
 };
 
 /* USB HID device FS Configuration Descriptor */
+__ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+{
+  0x09, /* bLength: Configuration Descriptor size */
+  USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
+  USB_HID_CONFIG_DESC_SIZ,
+  /* wTotalLength: Bytes returned */
+  0x00,
+  0x01,         /*bNumInterfaces: 1 interface*/
+  0x01,         /*bConfigurationValue: Configuration value*/
+  0x00,         /*iConfiguration: Index of string descriptor describing
+  the configuration*/
+  0xE0,         /*bmAttributes: bus powered and Support Remote Wake-up */
+  0x32,         /*MaxPower 100 mA: this current is used for detecting Vbus*/
+
+  /************** Descriptor of Joystick Mouse interface ****************/
+  /* 09 */
+  0x09,         /*bLength: Interface Descriptor size*/
+  USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+  0x00,         /*bInterfaceNumber: Number of Interface*/
+  0x00,         /*bAlternateSetting: Alternate setting*/
+  0x01,         /*bNumEndpoints*/
+  0x03,         /*bInterfaceClass: HID*/
+  0x00,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+  0x00,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+//  0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+//  0x02,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+  0,            /*iInterface: Index of string descriptor*/
+  /******************** Descriptor of Joystick Mouse HID ********************/
+  /* 18 */
+  0x09,         /*bLength: HID Descriptor size*/
+  HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+  0x11,         /*bcdHID: HID Class Spec release number*/
+  0x01,
+  0x00,         /*bCountryCode: Hardware target country*/
+  0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+  0x22,         /*bDescriptorType*/
+  GAMEPAD_HID_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
+  0x00,
+  /******************** Descriptor of Mouse endpoint ********************/
+  /* 27 */
+  0x07,          /*bLength: Endpoint Descriptor size*/
+  USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+  GAMEPAD_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+  0x03,          /*bmAttributes: Interrupt endpoint*/
+  GAMEPAD_HID_EPIN_SIZE,
+  0x00,
+  HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+  /* 34 */
+};
+
+/* USB HID device FS Configuration Descriptor */
 __ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
   0x09, /* bLength: Configuration Descriptor size */
@@ -147,7 +198,53 @@ __ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_E
 };
 
 /* USB HID device HS Configuration Descriptor */
-__ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+__ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+{
+  0x09, /* bLength: Configuration Descriptor size */
+  USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
+  USB_HID_CONFIG_DESC_SIZ,
+  /* wTotalLength: Bytes returned */
+  0x00,
+  0x01,         /*bNumInterfaces: 1 interface*/
+  0x01,         /*bConfigurationValue: Configuration value*/
+  0x00,         /*iConfiguration: Index of string descriptor describing
+  the configuration*/
+  0xE0,         /*bmAttributes: bus powered and Support Remote Wake-up */
+  0x32,         /*MaxPower 100 mA: this current is used for detecting Vbus*/
+  /* 09 */
+  0x09,         /*bLength: Interface Descriptor size*/
+  USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+  0x00,         /*bInterfaceNumber: Number of Interface*/
+  0x00,         /*bAlternateSetting: Alternate setting*/
+  0x01,         /*bNumEndpoints*/
+  0x03,         /*bInterfaceClass: HID*/
+  0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+  0x02,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+  0,            /*iInterface: Index of string descriptor*/
+  /* 18 */
+  0x09,         /*bLength: HID Descriptor size*/
+  HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+  0x11,         /*bcdHID: HID Class Spec release number*/
+  0x01,
+  0x00,         /*bCountryCode: Hardware target country*/
+  0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+  0x22,         /*bDescriptorType*/
+  GAMEPAD_HID_REPORT_DESC_SIZE,
+  0x00,
+  0x07,          /*bLength: Endpoint Descriptor size*/
+  USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+  GAMEPAD_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+  0x03,          /*bmAttributes: Interrupt endpoint*/
+  GAMEPAD_HID_EPIN_SIZE,
+//  DS5_HID_EPIN_SIZE, /*wMaxPacketSize: 4 Byte max */
+  0x00,
+  HID_HS_BINTERVAL,          /*bInterval: Polling Interval */
+  /* 34 */
+};
+
+
+/* USB HID device HS Configuration Descriptor */
+__ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
   0x09, /* bLength: Configuration Descriptor size */
   USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
@@ -199,7 +296,54 @@ __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIG
 };
 
 /* USB HID device Other Speed Configuration Descriptor */
-__ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+__ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+{
+  0x09, /* bLength: Configuration Descriptor size */
+  USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
+  USB_HID_CONFIG_DESC_SIZ,
+  /* wTotalLength: Bytes returned */
+  0x00,
+  0x01,         /*bNumInterfaces: 1 interface*/
+  0x01,         /*bConfigurationValue: Configuration value*/
+  0x00,         /*iConfiguration: Index of string descriptor describing
+  the configuration*/
+  0xE0,         /*bmAttributes: bus powered and Support Remote Wake-up */
+  0x32,         /*MaxPower 100 mA: this current is used for detecting Vbus*/
+  /************** Descriptor of Joystick Mouse interface ****************/
+  /* 09 */
+  0x09,         /*bLength: Interface Descriptor size*/
+  USB_DESC_TYPE_INTERFACE,/*bDescriptorType: Interface descriptor type*/
+  0x00,         /*bInterfaceNumber: Number of Interface*/
+  0x00,         /*bAlternateSetting: Alternate setting*/
+  0x01,         /*bNumEndpoints*/
+  0x03,         /*bInterfaceClass: HID*/
+  0x01,         /*bInterfaceSubClass : 1=BOOT, 0=no boot*/
+  0x02,         /*nInterfaceProtocol : 0=none, 1=keyboard, 2=mouse*/
+  0,            /*iInterface: Index of string descriptor*/
+  /******************** Descriptor of Joystick Mouse HID ********************/
+  /* 18 */
+  0x09,         /*bLength: HID Descriptor size*/
+  HID_DESCRIPTOR_TYPE, /*bDescriptorType: HID*/
+  0x11,         /*bcdHID: HID Class Spec release number*/
+  0x01,
+  0x00,         /*bCountryCode: Hardware target country*/
+  0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
+  0x22,         /*bDescriptorType*/
+  GAMEPAD_HID_REPORT_DESC_SIZE,
+  0x00,
+  /* 27 */
+  0x07,          /*bLength: Endpoint Descriptor size*/
+  USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
+  GAMEPAD_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
+  0x03,          /*bmAttributes: Interrupt endpoint*/
+  GAMEPAD_HID_EPIN_SIZE, /*wMaxPacketSize: 4 Byte max */
+  0x00,
+  HID_FS_BINTERVAL,          /*bInterval: Polling Interval */
+  /* 34 */
+};
+
+/* USB HID device Other Speed Configuration Descriptor */
+__ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
 {
   0x09, /* bLength: Configuration Descriptor size */
   USB_DESC_TYPE_CONFIGURATION, /* bDescriptorType: Configuration */
@@ -234,13 +378,10 @@ __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc[USB_HID_CONFIG_DESC_SIZ]
   0x01,         /*bNumDescriptors: Number of HID class descriptors to follow*/
   0x22,         /*bDescriptorType*/
   DS5_HID_REPORT_DESC_SIZE,
-//  HID_MOUSE_REPORT_DESC_SIZE,/*wItemLength: Total length of Report descriptor*/
   0x00,
-  /******************** Descriptor of Mouse endpoint ********************/
   /* 27 */
   0x07,          /*bLength: Endpoint Descriptor size*/
   USB_DESC_TYPE_ENDPOINT, /*bDescriptorType:*/
-
   DS5_HID_EPIN_ADDR,     /*bEndpointAddress: Endpoint Address (IN)*/
   0x03,          /*bmAttributes: Interrupt endpoint*/
   DS5_HID_EPIN_SIZE, /*wMaxPacketSize: 4 Byte max */
@@ -300,13 +441,14 @@ static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   /* Open EP IN */
 	g_current_mode = MODE_DS5;
+	g_current_mode = MODE_GAMEPAD;
 
 	if (g_current_mode == MODE_DS5) {
 	  USBD_LL_OpenEP(pdev, DS5_HID_EPIN_ADDR, USBD_EP_TYPE_INTR, DS5_HID_EPIN_SIZE);
 	  pdev->ep_in[DS5_HID_EPIN_ADDR & 0xFU].is_used = 1U;
 	} else if (g_current_mode == MODE_GAMEPAD) {
-	  USBD_LL_OpenEP(pdev, HID_EPIN_ADDR, USBD_EP_TYPE_INTR, HID_EPIN_SIZE);
-	  pdev->ep_in[HID_EPIN_ADDR & 0xFU].is_used = 1U;
+	  USBD_LL_OpenEP(pdev, GAMEPAD_HID_EPIN_ADDR, USBD_EP_TYPE_INTR, GAMEPAD_HID_EPIN_SIZE);
+	  pdev->ep_in[GAMEPAD_HID_EPIN_ADDR & 0xFU].is_used = 1U;
 	}
 
   pdev->pClassData = USBD_malloc(sizeof(USBD_HID_HandleTypeDef));
@@ -545,8 +687,8 @@ static uint8_t  *USBD_HID_GetFSCfgDesc(uint16_t *length)
 	      break;
 
 	    case MODE_GAMEPAD:
-	      desc_ptr = USBD_HID_CfgFSDesc_DS5;
-	      *length = sizeof(USBD_HID_CfgFSDesc_DS5);
+	      desc_ptr = USBD_HID_CfgFSDesc_GAMEPAD;
+	      *length = sizeof(USBD_HID_CfgFSDesc_GAMEPAD);
 	      break;
 
 	    // Add a case for your third mode if needed
@@ -574,8 +716,37 @@ static uint8_t  *USBD_HID_GetFSCfgDesc(uint16_t *length)
   */
 static uint8_t  *USBD_HID_GetHSCfgDesc(uint16_t *length)
 {
-  *length = sizeof(USBD_HID_CfgHSDesc);
-  return USBD_HID_CfgHSDesc;
+	uint8_t *desc_ptr;
+//
+//  *length = sizeof(USBD_HID_CfgHSDesc);
+//  return USBD_HID_CfgHSDesc;
+
+	switch (g_current_mode)
+	  {
+	    case MODE_DS5:
+	      desc_ptr = USBD_HID_CfgHSDesc_DS5;
+	      *length = sizeof(USBD_HID_CfgHSDesc_DS5);
+	      break;
+
+	    case MODE_GAMEPAD:
+	      desc_ptr = USBD_HID_CfgHSDesc_GAMEPAD;
+	      *length = sizeof(USBD_HID_CfgHSDesc_GAMEPAD);
+	      break;
+
+	    // Add a case for your third mode if needed
+	    // case MODE_XINPUT:
+	    //   desc_ptr = USBD_HID_CfgFSDesc_XINPUT;
+	    //   *length = sizeof(USBD_HID_CfgFSDesc_XINPUT);
+	    //   break;
+
+	    default:
+	      // In case of an invalid mode, default to a known configuration.
+	      desc_ptr = USBD_HID_CfgHSDesc_DS5;
+	      *length = sizeof(USBD_HID_CfgHSDesc_DS5);
+	      break;
+	  }
+
+	  return desc_ptr;
 }
 
 /**
@@ -587,8 +758,40 @@ static uint8_t  *USBD_HID_GetHSCfgDesc(uint16_t *length)
   */
 static uint8_t  *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length)
 {
-  *length = sizeof(USBD_HID_OtherSpeedCfgDesc);
-  return USBD_HID_OtherSpeedCfgDesc;
+//  *length = sizeof(USBD_HID_OtherSpeedCfgDesc);
+//  return USBD_HID_OtherSpeedCfgDesc;
+
+	uint8_t *desc_ptr;
+//
+//  *length = sizeof(USBD_HID_CfgHSDesc);
+//  return USBD_HID_CfgHSDesc;
+
+	switch (g_current_mode)
+	  {
+	    case MODE_DS5:
+	      desc_ptr = USBD_HID_OtherSpeedCfgDesc_DS5;
+	      *length = sizeof(USBD_HID_OtherSpeedCfgDesc_DS5);
+	      break;
+
+	    case MODE_GAMEPAD:
+	      desc_ptr = USBD_HID_OtherSpeedCfgDesc_GAMEPAD;
+	      *length = sizeof(USBD_HID_OtherSpeedCfgDesc_GAMEPAD);
+	      break;
+
+	    // Add a case for your third mode if needed
+	    // case MODE_XINPUT:
+	    //   desc_ptr = USBD_HID_CfgFSDesc_XINPUT;
+	    //   *length = sizeof(USBD_HID_CfgFSDesc_XINPUT);
+	    //   break;
+
+	    default:
+	      // In case of an invalid mode, default to a known configuration.
+	      desc_ptr = USBD_HID_OtherSpeedCfgDesc_DS5;
+	      *length = sizeof(USBD_HID_OtherSpeedCfgDesc_DS5);
+	      break;
+	  }
+
+	  return desc_ptr;
 }
 
 /**

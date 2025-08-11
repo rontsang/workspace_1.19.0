@@ -42,7 +42,7 @@ static void MX_USART2_UART_Init(void);
 extern USBD_HandleTypeDef hUsbDeviceFS;
 
 /* USER CODE BEGIN ... */
-static uint8_t gamepad_report2[2] = {0x00};
+static uint8_t gamepad_report[2] = {0x00, 0x00};
 static uint8_t ds5_report[2] = {0x00, 0x00};
 
 typedef struct __attribute__((packed)) {
@@ -52,11 +52,11 @@ typedef struct __attribute__((packed)) {
     uint8_t hatSwitch;      // Hat (0–7, 0x0F = neutral)
     uint16_t buttons;       // 15 buttons, LSB first
     uint8_t vendorData[53]; // Padding/vendor-defined
-} GAMEPAD_Report_t;
+} DS5_Report_t;
 
 
-void SendGamepadReport(void) {
-     GAMEPAD_Report_t report = {0};
+void SendDS5Report(void) {
+     DS5_Report_t report = {0};
 
      report.reportId = 0x01;
      report.axes[0] = 128; // X (unused)
@@ -95,15 +95,16 @@ int main(void)
 
 	/* USER CODE BEGIN ... */
 	// 2. HID mode initialization
-	g_current_mode = (DeviceMode_t)Flash_ReadLastValue();
-//	g_current_mode = MODE_DS5;
+//	g_current_mode = (DeviceMode_t)Flash_ReadLastValue();
+	g_current_mode = MODE_DS5;
+	g_current_mode = MODE_GAMEPAD;
 
 	// The HID arrays are statically allocated
 	// Overwrite certain parameters manually based on HID profile
-	USBD_HID_UpdateDescriptors();
+//	USBD_HID_UpdateDescriptors();
 	MX_USB_DEVICE_Init();
 
-	static GAMEPAD_Report_t report;
+	static DS5_Report_t report;
 
 	report.reportId = 0x01;
 	report.axes[0] = 128;
@@ -123,19 +124,37 @@ int main(void)
 	while (1)
 	{
 
-			printf("Printing GPIO 0: \r\n");
-			printf("Printing GPIO 0: %d\r\n", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
-	     /* --- Press all 15 buttons --- */
-	     // 0x7FFF is a bitmask with the first 15 bits set to 1.
-	     report.buttons = 0x7FFF;
-	     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
-	     HAL_Delay(50); // Wait 0.2 seconds
+		printf("Printing GPIO 0: \r\n");
+		printf("Printing GPIO 0: %d\r\n", HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0));
 
-	     /* --- Release all buttons --- */
-	     report.buttons = 0x0000;
-	     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
-	     HAL_Delay(50); // Wait 0.2 seconds
+		if(g_current_mode == MODE_GAMEPAD){
+			gamepad_report[0] = (1 << 0) | (1 << 2); // This results in 0b00000101, which is 0x05
+			gamepad_report[1] = 0x00; // No buttons pressed in the second byte
 
+			// Send the 2-byte gamepad report to the host
+			USBD_HID_SendReport(&hUsbDeviceFS, gamepad_report, sizeof(gamepad_report));
+			HAL_Delay(20); // A 20ms delay is more suitable for a gamepad
+
+			// --- Example: Clear all buttons for the next report ---
+			gamepad_report[0] = 0x00;
+			gamepad_report[1] = 0x00;
+			USBD_HID_SendReport(&hUsbDeviceFS, gamepad_report, sizeof(gamepad_report));
+			HAL_Delay(20);
+		}
+
+		else if(g_current_mode == MODE_DS5){
+			 /* --- Press all 15 buttons --- */
+			 // 0x7FFF is a bitmask with the first 15 bits set to 1.
+	//	     report.buttons = 0x7FFF;
+			 report.buttons = 0x7F01;
+			 USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
+			 HAL_Delay(50); // Wait 0.2 seconds
+
+			 /* --- Release all buttons --- */
+			 report.buttons = 0x0000;
+			 USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
+			 HAL_Delay(50); // Wait 0.2 seconds
+		}
 
 //		uint16_t last = Flash_ReadLastValue();
 

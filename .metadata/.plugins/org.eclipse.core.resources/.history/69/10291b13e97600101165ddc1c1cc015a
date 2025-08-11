@@ -1,0 +1,39 @@
+/*
+ * hid_profiles.h
+ *
+ *  Created on: Aug 9, 2025
+ *      Author: rntsang
+ */
+
+#ifndef INC_HID_PROFILES_H_
+#define INC_HID_PROFILES_H_
+
+#include "usbd_hid.h"
+#include "hid_modes.h"
+
+
+// DS5 Profile
+#define DS5_HID_REPORT_DESC_SIZE    99
+#define DS5_HID_EPIN_ADDR           0x81
+#define DS5_HID_EPIN_SIZE           64
+#define DS5_HID_FS_BINTERVAL        0x0A
+#define DS5_REPORT_ID               0x01
+
+// Generic Gamepad Profile
+#define GAMEPAD_HID_REPORT_DESC_SIZE  	29
+#define GAMEPAD_HID_EPIN_ADDR       	0x81
+#define GAMEPAD_HID_EPIN_SIZE      	 	2
+#define GAMEPAD_HID_FS_BINTERVAL    	0x0A
+
+// The global variable for the current mode
+extern DeviceMode_t g_current_mode;
+
+// The HID Report Descriptors
+extern const uint8_t DS5_HID_ReportDesc[];
+extern const uint8_t GAMEPAD_HID_ReportDesc[];
+extern const uint8_t KEYBOARD_HID_ReportDesc[];
+
+// Dynamically change descriptors during runtime
+void USBD_HID_UpdateDescriptors(DeviceMode_t mode);
+
+#endif /* INC_HID_PROFILES_H_ */

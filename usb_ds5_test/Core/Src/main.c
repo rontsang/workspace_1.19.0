@@ -82,7 +82,7 @@ typedef struct __attribute__((packed)) {
 } GAMEPAD_Report_t;
 
 
-void SendGamepadReport(void) {
+void SendDS5Report(void) {
      GAMEPAD_Report_t report = {0};
 
      report.reportId = 0x01;

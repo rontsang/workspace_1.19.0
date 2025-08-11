@@ -1,10 +1,10 @@
-21:56:39 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+15:27:01 **** Incremental Build of configuration Debug for project usb_hid_switch ****
 make -j24 all 
 arm-none-eabi-size  usb_hid_switch.elf 
    text	   data	    bss	    dec	    hex	filename
-  19600	    372	   4128	  24100	   5e24	usb_hid_switch.elf
+  18948	    480	   4096	  23524	   5be4	usb_hid_switch.elf
 Finished building: default.size.stdout
  
 
-21:56:39 Build Finished. 0 errors, 0 warnings. (took 187ms)
+15:27:02 Build Finished. 0 errors, 0 warnings. (took 187ms)
 

@@ -23,7 +23,8 @@
 #define GAMEPAD_HID_REPORT_DESC_SIZE  	29
 #define GAMEPAD_HID_EPIN_ADDR       	0x81
 #define GAMEPAD_HID_EPIN_SIZE      	 	2
-#define GAMEPAD_HID_FS_BINTERVAL    	0x0A
+#define GAMEPAD_HID_FS_BINTERVAL   	  	0x0A
+#define GAMEPAD_HID_HS_BINTERVAL    	0x07
 
 // The global variable for the current mode
 extern DeviceMode_t g_current_mode;

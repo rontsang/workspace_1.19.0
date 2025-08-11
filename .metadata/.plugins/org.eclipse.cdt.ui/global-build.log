@@ -2383,3 +2383,389 @@ arm-none-eabi-size  usb_hid_switch.elf
   19600	    372	   4128	  24100	   5e24	usb_hid_switch.elf
 Finished building: default.size.stdout
  
+21:57:11 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19600	    372	   4128	  24100	   5e24	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:26:32 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18872	    408	   4088	  23368	   5b48	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:27:21 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18868	    408	   4088	  23364	   5b44	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:27:25 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18868	    408	   4088	  23364	   5b44	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:30:05 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18868	    408	   4088	  23364	   5b44	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:47:55 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetOtherSpeedCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:760:20: error: 'USBD_HID_OtherSpeedCfgDesc' undeclared (first use in this function); did you mean 'USBD_HID_GetOtherSpeedCfgDesc'?
+  760 |   *length = sizeof(USBD_HID_OtherSpeedCfgDesc);
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    USBD_HID_GetOtherSpeedCfgDesc
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:760:20: note: each undeclared identifier is reported only once for each function it appears in
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: At top level:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:48:11 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18876	    444	   4092	  23412	   5b74	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:48:17 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18876	    444	   4092	  23412	   5b74	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:05:51 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18876	    444	   4092	  23412	   5b74	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:05:56 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18876	    444	   4092	  23412	   5b74	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:06:40 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendGamepadReport':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         GAMEPAD_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'GAMEPAD_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18876	    444	   4092	  23412	   5b74	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:08:37 **** Incremental Build of configuration Debug for project usb_gamepad_test ****
+make -j24 all 
+arm-none-eabi-size  usb_gamepad_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32304	    312	   3688	  36304	   8dd0	usb_gamepad_test.elf
+Finished building: default.size.stdout
+ 
+15:12:09 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:76:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   76 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:131:38: error: 'MODE_GAEMPAD' undeclared (first use in this function); did you mean 'MODE_GAMEPAD'?
+  131 |                 if(g_current_mode == MODE_GAEMPAD){
+      |                                      ^~~~~~~~~~~~
+      |                                      MODE_GAMEPAD
+../Core/Src/main.c:131:38: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+../Core/Src/main.c:45:16: warning: 'gamepad_report2' defined but not used [-Wunused-variable]
+   45 | static uint8_t gamepad_report2[2] = {0x00};
+      |                ^~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+15:13:04 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18936	    444	   4092	  23472	   5bb0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:13:16 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18936	    444	   4092	  23472	   5bb0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:13:41 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18936	    444	   4092	  23472	   5bb0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:13:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18936	    444	   4092	  23472	   5bb0	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:20:57 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18932	    444	   4092	  23468	   5bac	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:21:00 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18932	    444	   4092	  23468	   5bac	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:23:15 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18952	    480	   4096	  23528	   5be8	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:23:22 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18952	    480	   4096	  23528	   5be8	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:26:50 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18948	    480	   4096	  23524	   5be4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:27:01 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  18948	    480	   4096	  23524	   5be4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
