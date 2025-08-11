@@ -440,8 +440,8 @@ __ALIGN_BEGIN static uint8_t USBD_HID_DeviceQualifierDesc[USB_LEN_DEV_QUALIFIER_
 static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev, uint8_t cfgidx)
 {
   /* Open EP IN */
-	g_current_mode = MODE_DS5;
-	g_current_mode = MODE_GAMEPAD;
+//	g_current_mode = MODE_DS5;
+//	g_current_mode = MODE_GAMEPAD;
 
 	if (g_current_mode == MODE_DS5) {
 	  USBD_LL_OpenEP(pdev, DS5_HID_EPIN_ADDR, USBD_EP_TYPE_INTR, DS5_HID_EPIN_SIZE);
