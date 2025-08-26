@@ -212,3 +212,409 @@ arm-none-eabi-size  usb_mouse_test.elf
   32320	    344	   3680	  36344	   8df8	usb_mouse_test.elf
 Finished building: default.size.stdout
  
+14:34:14 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../USB_DEVICE/Target/usbd_conf.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/Target/usbd_conf.d" -MT"USB_DEVICE/Target/usbd_conf.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/Target/usbd_conf.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usb_device.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usb_device.d" -MT"USB_DEVICE/App/usb_device.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usb_device.o"
+arm-none-eabi-gcc "../USB_DEVICE/App/usbd_desc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"USB_DEVICE/App/usbd_desc.d" -MT"USB_DEVICE/App/usbd_desc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "USB_DEVICE/App/usbd_desc.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o"
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pcd_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_ll_usb.o"
+arm-none-eabi-gcc -mcpu=cortex-m0 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32f042k6tx.d" -MT"Core/Startup/startup_stm32f042k6tx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32f042k6tx.o" "../Core/Startup/startup_stm32f042k6tx.s"
+arm-none-eabi-gcc "../Core/Src/eeprom_emulation.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/eeprom_emulation.d" -MT"Core/Src/eeprom_emulation.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/eeprom_emulation.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_hal_msp.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_hal_msp.d" -MT"Core/Src/stm32f0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f0xx_it.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f0xx_it.d" -MT"Core/Src/stm32f0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f0xx.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f0xx.d" -MT"Core/Src/system_stm32f0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32f0xx.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  18972	    480	   4096	  23548	   5bfc	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:47:38 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Core/Src/hid_profiles.c:96:30: warning: 'HID_KEYBOARD_ReportDesc' defined but not used [-Wunused-variable]
+   96 | __ALIGN_BEGIN static uint8_t HID_KEYBOARD_ReportDesc[KEYBOARD_HID_REPORT_DESC_SIZE] __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:246:23: error: redefinition of 'USBD_HID_CfgFSDesc_DS5'
+  246 | __ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:144:23: note: previous definition of 'USBD_HID_CfgFSDesc_DS5' with type 'uint8_t[34]' {aka 'unsigned char[34]'}
+  144 | __ALIGN_BEGIN uint8_t USBD_HID_CfgFSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                       ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:395:30: error: redefinition of 'USBD_HID_OtherSpeedCfgDesc_GAMEPAD'
+  395 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:347:30: note: previous definition of 'USBD_HID_OtherSpeedCfgDesc_GAMEPAD' with type 'uint8_t[34]' {aka 'unsigned char[34]'}
+  347 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetFSCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:841:34: error: 'USBD_HID_CfgFSDesc_KEYBOARD' undeclared (first use in this function); did you mean 'USBD_HID_CfgFSDesc_GAMEPAD'?
+  841 |                       desc_ptr = USBD_HID_CfgFSDesc_KEYBOARD;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  USBD_HID_CfgFSDesc_GAMEPAD
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:841:34: note: each undeclared identifier is reported only once for each function it appears in
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetHSCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:888:34: error: 'USBD_HID_CfgHSDesc_KEYBOARD' undeclared (first use in this function); did you mean 'USBD_HID_CfgHSDesc_GAMEPAD'?
+  888 |                       desc_ptr = USBD_HID_CfgHSDesc_KEYBOARD;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  USBD_HID_CfgHSDesc_GAMEPAD
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetOtherSpeedCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:937:13: error: duplicate case value
+  937 |             case MODE_GAMEPAD:
+      |             ^~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:932:13: note: previously used here
+  932 |             case MODE_GAMEPAD:
+      |             ^~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:48:24 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:490:30: error: redefinition of 'USBD_HID_OtherSpeedCfgDesc_KEYBOARD'
+  490 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_KEYBOARD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:395:30: note: previous definition of 'USBD_HID_OtherSpeedCfgDesc_KEYBOARD' with type 'uint8_t[34]' {aka 'unsigned char[34]'}
+  395 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_KEYBOARD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetHSCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:888:34: error: 'USBD_HID_CfgHSDesc_KEYBOARD' undeclared (first use in this function); did you mean 'USBD_HID_CfgFSDesc_KEYBOARD'?
+  888 |                       desc_ptr = USBD_HID_CfgHSDesc_KEYBOARD;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  USBD_HID_CfgFSDesc_KEYBOARD
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:888:34: note: each undeclared identifier is reported only once for each function it appears in
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetOtherSpeedCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:937:13: error: duplicate case value
+  937 |             case MODE_GAMEPAD:
+      |             ^~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:932:13: note: previously used here
+  932 |             case MODE_GAMEPAD:
+      |             ^~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:48:30 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:538:15: error: expected expression before 'static'
+  538 | __ALIGN_BEGIN static uint8_t USBD_HID_Desc[USB_HID_DESC_SIZ]  __ALIGN_END  =
+      |               ^~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:538:15: warning: excess elements in array initializer
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:538:15: note: (near initialization for 'USBD_HID_OtherSpeedCfgDesc_DS5')
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:54:17: warning: 'USBD_HID_Init' used but never defined
+   54 | static uint8_t  USBD_HID_Init(USBD_HandleTypeDef *pdev,
+      |                 ^~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:57:17: warning: 'USBD_HID_DeInit' used but never defined
+   57 | static uint8_t  USBD_HID_DeInit(USBD_HandleTypeDef *pdev,
+      |                 ^~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:60:17: warning: 'USBD_HID_Setup' used but never defined
+   60 | static uint8_t  USBD_HID_Setup(USBD_HandleTypeDef *pdev,
+      |                 ^~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:63:18: warning: 'USBD_HID_GetFSCfgDesc' used but never defined
+   63 | static uint8_t  *USBD_HID_GetFSCfgDesc(uint16_t *length);
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:65:18: warning: 'USBD_HID_GetHSCfgDesc' used but never defined
+   65 | static uint8_t  *USBD_HID_GetHSCfgDesc(uint16_t *length);
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:67:18: warning: 'USBD_HID_GetOtherSpeedCfgDesc' used but never defined
+   67 | static uint8_t  *USBD_HID_GetOtherSpeedCfgDesc(uint16_t *length);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:69:18: warning: 'USBD_HID_GetDeviceQualifierDesc' used but never defined
+   69 | static uint8_t  *USBD_HID_GetDeviceQualifierDesc(uint16_t *length);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:71:17: warning: 'USBD_HID_DataIn' used but never defined
+   71 | static uint8_t  USBD_HID_DataIn(USBD_HandleTypeDef *pdev, uint8_t epnum);
+      |                 ^~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:442:30: warning: 'USBD_HID_OtherSpeedCfgDesc_DS5' defined but not used [-Wunused-variable]
+  442 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:395:30: warning: 'USBD_HID_OtherSpeedCfgDesc_KEYBOARD' defined but not used [-Wunused-variable]
+  395 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_KEYBOARD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:347:30: warning: 'USBD_HID_OtherSpeedCfgDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  347 | __ALIGN_BEGIN static uint8_t USBD_HID_OtherSpeedCfgDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:295:30: warning: 'USBD_HID_CfgHSDesc_DS5' defined but not used [-Wunused-variable]
+  295 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_DS5[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:201:30: warning: 'USBD_HID_CfgHSDesc_GAMEPAD' defined but not used [-Wunused-variable]
+  201 | __ALIGN_BEGIN static uint8_t USBD_HID_CfgHSDesc_GAMEPAD[USB_HID_CONFIG_DESC_SIZ]  __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:48:42 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetHSCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:888:34: error: 'USBD_HID_CfgHSDesc_KEYBOARD' undeclared (first use in this function); did you mean 'USBD_HID_CfgFSDesc_KEYBOARD'?
+  888 |                       desc_ptr = USBD_HID_CfgHSDesc_KEYBOARD;
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                  USBD_HID_CfgFSDesc_KEYBOARD
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:888:34: note: each undeclared identifier is reported only once for each function it appears in
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetOtherSpeedCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:937:13: error: duplicate case value
+  937 |             case MODE_GAMEPAD:
+      |             ^~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:932:13: note: previously used here
+  932 |             case MODE_GAMEPAD:
+      |             ^~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:49:31 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c: In function 'USBD_HID_GetOtherSpeedCfgDesc':
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:983:13: error: duplicate case value
+  983 |             case MODE_GAMEPAD:
+      |             ^~~~
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:978:13: note: previously used here
+  978 |             case MODE_GAMEPAD:
+      |             ^~~~
+make: *** [Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/subdir.mk:19: Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:49:40 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19004	    588	   4092	  23684	   5c84	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:49:48 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19004	    588	   4092	  23684	   5c84	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:50:05 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19004	    588	   4092	  23684	   5c84	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:50:49 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19004	    588	   4092	  23684	   5c84	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:53:39 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:75:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   75 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19008	    588	   4092	  23688	   5c88	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+14:53:51 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19008	    588	   4092	  23688	   5c88	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+14:57:48 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o: in function `USBD_HID_Setup':
+C:/Users/rntsa/STM32CubeIDE/workspace_1.19.0/usb_hid_switch/Debug/../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c:795:(.text.USBD_HID_Setup+0x108): undefined reference to `KEYBOARD_HID_ReportDesc'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: usb_hid_switch.elf] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+14:58:35 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Core/Src/hid_profiles.c:96:30: error: conflicting types for 'KEYBOARD_HID_ReportDesc'; have 'uint8_t[63]' {aka 'unsigned char[63]'}
+   96 | __ALIGN_BEGIN static uint8_t KEYBOARD_HID_ReportDesc[KEYBOARD_HID_REPORT_DESC_SIZE] __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:43:22: note: previous declaration of 'KEYBOARD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   43 | extern const uint8_t KEYBOARD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:96:30: warning: 'KEYBOARD_HID_ReportDesc' defined but not used [-Wunused-variable]
+   96 | __ALIGN_BEGIN static uint8_t KEYBOARD_HID_ReportDesc[KEYBOARD_HID_REPORT_DESC_SIZE] __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+15:00:27 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.d" -MT"Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Middlewares/ST/STM32_USB_Device_Library/Class/HID/Src/usbd_hid.o"
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+../Core/Src/hid_profiles.c:96:30: error: conflicting types for 'KEYBOARD_HID_ReportDesc'; have 'uint8_t[63]' {aka 'unsigned char[63]'}
+   96 | __ALIGN_BEGIN static uint8_t KEYBOARD_HID_ReportDesc[KEYBOARD_HID_REPORT_DESC_SIZE] __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/hid_profiles.c:8:
+../Core/Inc/hid_profiles.h:43:22: note: previous declaration of 'KEYBOARD_HID_ReportDesc' with type 'const uint8_t[]' {aka 'const unsigned char[]'}
+   43 | extern const uint8_t KEYBOARD_HID_ReportDesc[];
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/hid_profiles.c:96:30: warning: 'KEYBOARD_HID_ReportDesc' defined but not used [-Wunused-variable]
+   96 | __ALIGN_BEGIN static uint8_t KEYBOARD_HID_ReportDesc[KEYBOARD_HID_REPORT_DESC_SIZE] __ALIGN_END =
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/hid_profiles.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j24 all" terminated with exit code 2. Build might be incomplete.
+15:01:00 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/hid_profiles.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/hid_profiles.d" -MT"Core/Src/hid_profiles.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/hid_profiles.o"
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19084	    588	   4092	  23764	   5cd4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:01:06 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19084	    588	   4092	  23764	   5cd4	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:02:40 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:77:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   77 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19156	    588	   4092	  23836	   5d1c	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:02:47 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19156	    588	   4092	  23836	   5d1c	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+15:05:15 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F042x6 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../USB_DEVICE/App -I../USB_DEVICE/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc -Oz -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'SendDS5Report':
+../Core/Src/main.c:77:41: warning: passing argument 2 of 'USBD_HID_SendReport' from incompatible pointer type [-Wincompatible-pointer-types]
+   77 |      USBD_HID_SendReport(&hUsbDeviceFS, &report, sizeof(report));
+      |                                         ^~~~~~~
+      |                                         |
+      |                                         DS5_Report_t *
+In file included from ../Core/Src/main.c:25:
+../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc/usbd_hid.h:122:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'DS5_Report_t *'
+  122 |                             uint8_t *report,
+      |                             ~~~~~~~~~^~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:46:16: warning: 'ds5_report' defined but not used [-Wunused-variable]
+   46 | static uint8_t ds5_report[2] = {0x00, 0x00};
+      |                ^~~~~~~~~~
+arm-none-eabi-gcc -o "usb_hid_switch.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\rntsa\STM32CubeIDE\workspace_1.19.0\usb_hid_switch\STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="usb_hid_switch.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: usb_hid_switch.elf
+ 
+arm-none-eabi-size  usb_hid_switch.elf 
+arm-none-eabi-objdump -h -S usb_hid_switch.elf  > "usb_hid_switch.list"
+   text	   data	    bss	    dec	    hex	filename
+  19152	    588	   4092	  23832	   5d18	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 
+Finished building: usb_hid_switch.list
+ 
+15:05:45 **** Incremental Build of configuration Debug for project usb_hid_switch ****
+make -j24 all 
+arm-none-eabi-size  usb_hid_switch.elf 
+   text	   data	    bss	    dec	    hex	filename
+  19152	    588	   4092	  23832	   5d18	usb_hid_switch.elf
+Finished building: default.size.stdout
+ 

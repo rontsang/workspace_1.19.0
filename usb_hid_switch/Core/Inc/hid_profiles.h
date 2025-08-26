@@ -26,6 +26,14 @@
 #define GAMEPAD_HID_FS_BINTERVAL   	  	0x0A
 #define GAMEPAD_HID_HS_BINTERVAL    	0x07
 
+// Keyboard Profile
+#define KEYBOARD_HID_REPORT_DESC_SIZE  63
+#define HID_KEYBOARD_REPORT_DESC_SIZE  63
+#define KEYBOARD_HID_EPIN_ADDR       0x81U
+#define KEYBOARD_HID_EPIN_SIZE       0x08U  // 8 bytes for a standard keyboard report
+#define KEYBOARD_HID_FS_BINTERVAL    0x0AU
+#define KEYBOARD_HID_HS_BINTERVAL    0x07U
+
 // The global variable for the current mode
 extern DeviceMode_t g_current_mode;
 

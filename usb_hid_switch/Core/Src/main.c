@@ -45,6 +45,8 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 static uint8_t gamepad_report[2] = {0x00, 0x00};
 static uint8_t ds5_report[2] = {0x00, 0x00};
 
+#define HID_KEYCODE_A 0x04
+
 typedef struct __attribute__((packed)) {
     uint8_t reportId;       // Always 0x01
     uint8_t axes[6];        // Axes: X, Y, Z, Rz, Rx, Ry
@@ -98,6 +100,7 @@ int main(void)
 //	g_current_mode = (DeviceMode_t)Flash_ReadLastValue();
 	g_current_mode = MODE_DS5;
 	g_current_mode = MODE_GAMEPAD;
+//	g_current_mode = MODE_KEYBOARD;
 
 	// The HID arrays are statically allocated
 	// Overwrite certain parameters manually based on HID profile
@@ -155,6 +158,20 @@ int main(void)
 			 USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&report, sizeof(report));
 			 HAL_Delay(50); // Wait 0.2 seconds
 		}
+
+		else if(g_current_mode == MODE_KEYBOARD){
+			uint8_t report_press[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+			uint8_t report_release[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; report_press[2] = HID_KEYCODE_A;
+
+			USBD_HID_SendReport(&hUsbDeviceFS, report_press, sizeof(report_press));
+			HAL_Delay(100);
+
+			/* --- Example: Release the 'A' key --- */
+			// Send a zeroed-out report to indicate no keys are pressed
+			USBD_HID_SendReport(&hUsbDeviceFS, report_release, sizeof(report_release));
+			HAL_Delay(1000);
+		}
+
 
 //		uint16_t last = Flash_ReadLastValue();
 
